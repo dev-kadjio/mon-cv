@@ -79,7 +79,7 @@
 }
 
 #u63f5c06078832 .header {
-    background: rgb(64, 107, 140);
+    background: var(--heading);
 }
 
 #u63f5c06078832 .header-infos {
@@ -109,8 +109,8 @@
 
 #u63f5c06078832 .cv-username,
 #u63f5c06078832 .cv-username span {
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 32px;
+    line-height: 36px;
 }
 
 #u63f5c06078832 .cv-username {
@@ -132,6 +132,7 @@
 
 #u63f5c06078832 .cv-job-sought {
     display: block;
+    margin-top: 10px;
 }
 
 #u63f5c06078832 .cv-job-sought {
@@ -140,8 +141,10 @@
 }
 
 #u63f5c06078832 .cv-job-sought {
-    color: rgb(238, 238, 238);
-    border-color: rgb(238, 238, 238);
+    color: #e5e7eb;
+    border-color: #e5e7eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 #u63f5c06078832 .header .etatcivil {
@@ -310,10 +313,12 @@ span.medium-editor-element {
 
 #u63f5c06078832 .cv-block-title .title-text,
 #u63f5c06078832 .cv-block-title .title-text span {
-    color: rgb(0, 152, 207);
+    color: var(--accent);
     font-size: 15px;
     line-height: 19px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     font-family: Roboto;
 }
 
@@ -982,7 +987,8 @@ pre {
 
 #u63f5c06078832 .tile_project {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
+    /* font-size: 13px; */
 }
 
 #u63f5c06078832 .tile_project::after {
@@ -1196,4 +1202,79 @@ a {
 
 .formation-place {
     display: block !important;
+}
+
+/* Design amélioré : variables et composants */
+#u63f5c06078832 {
+    --accent: #0ea5b7; /* teal */
+    --accent-dark: #0b7285;
+    --bg-soft: #f7fafc;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --heading: #0f172a; /* deep navy */
+}
+
+/* Liens accentués */
+#u63f5c06078832 a {
+    color: var(--accent);
+    text-decoration: none;
+}
+#u63f5c06078832 a:hover {
+    text-decoration: underline;
+}
+
+/* Cartes pour expériences et formations */
+#u63f5c06078832 .pro-experience .experience-content,
+#u63f5c06078832 .formation-content {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-top: 6px;
+}
+
+/* Dates en ligne avec pastille */
+#u63f5c06078832 .experience-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+}
+#u63f5c06078832 .experience-date-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+/* Puces personnalisées pour listes */
+#u63f5c06078832 .pro-experience .experience-details ul li,
+#u63f5c06078832 .formation .formation-details ul li {
+    position: relative;
+    padding-left: 14px;
+}
+#u63f5c06078832 .pro-experience .experience-details ul li::before,
+#u63f5c06078832 .formation .formation-details ul li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/* Responsive preview */
+@media (max-width: 1024px) {
+    #u63f5c06078832 .colonneGauche,
+    #u63f5c06078832 .colonneDroite {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    #u63f5c06078832 .cv-template-base {
+        padding: 24px;
+    }
 }
